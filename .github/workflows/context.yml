@@ -1,0 +1,6 @@
+name: Contexts
+on : push
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        - run : echo "${{github.actor}}"
