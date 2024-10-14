@@ -6,5 +6,6 @@ jobs:
         steps:
             - run : | 
                 echo "${{github.actor}}"
+                echo "${GITHUB_ACTOR}"
                 echo "${{runner.os}}"
                 echo "${{runner.name}}"
