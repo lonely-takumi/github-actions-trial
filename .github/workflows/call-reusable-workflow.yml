@@ -8,4 +8,4 @@ jobs:
         with:
             input_1: "ttttttttttttttttttttttest"
         secrets:
-            token: ${{ secrets.CLOUD_ID }}
+            cloud_id: ${{ secrets.CLOUD_ID }}
