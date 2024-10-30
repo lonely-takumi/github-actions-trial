@@ -2,7 +2,7 @@ name: Call reusable workflow
 on: push
 jobs:
     call:
-        uses: lonely-takumi/reusable-workflow-repository/.github/workflows/reusable-workflow.yml
+        uses: lonely-takumi/reusable-workflow-repository/.github/workflows/reusable-workflow.yml@main
         permissions:
             contents: read
         with:
