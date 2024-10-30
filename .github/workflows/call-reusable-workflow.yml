@@ -7,3 +7,5 @@ jobs:
             contents: read
         with:
             input_1: "ttttttttttttttttttttttest"
+        secrets:
+            token: ${{ secrets.CLOUD_ID }}
