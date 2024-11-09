@@ -12,8 +12,12 @@ jobs:
             - name: checkout another repository
               uses: actions/checkout@v4
               with:
-                  repository: lonely-takumi/reusable-workflow-repository
-                  ref: main
+                repository: lonely-takumi/reusable-workflow-repository
+                ref: main
             - name: check directory
               run: |
+                ls
+            - name: move work directory
+              run: |
+                cd /home/runner/work/
                 ls
