@@ -29,6 +29,6 @@ jobs:
                 cd ${{ github.workspace }}/sub/.github/actions/test-action
                 ls
             - name: use another repository action
-              uses: ${{ github.workspace }}/sub/.github/actions/test-action
+              uses: ${{ github.workspace }}/sub/.github/actions/test-action@main
               with:
                 input_1: "fwjfiowjf"
