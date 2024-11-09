@@ -17,18 +17,7 @@ jobs:
                 repository: lonely-takumi/reusable-workflow-repository
                 ref: main
                 path: sub
-            - name: check directory
-              run: |
-                ls
-            - name: move work directory
-              run: |
-                cd ${{ github.workspace }}/main
-                ls
-                cd ${{ github.workspace }}/sub
-                ls
-                cd ${{ github.workspace }}/sub/.github/actions/test-action
-                ls
             - name: use another repository action
-              uses: ${{ github.workspace }}/sub/.github/actions/test-action
+              uses: ./sub/.github/actions/test-action
               with:
                 input_1: "fwjfiowjf"
