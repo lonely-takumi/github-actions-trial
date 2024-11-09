@@ -1,0 +1,7 @@
+name: use another repository action
+on: push
+jobs:
+    test-action:
+        uses: lonely-takumi/reusable-workflow-repository/.github/actions/test-action@main
+        with:
+            input_1: "opfkopewjfopqj"
