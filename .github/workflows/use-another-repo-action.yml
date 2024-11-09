@@ -29,6 +29,6 @@ jobs:
                 cd ${{ github.workspace }}/sub/.github/actions/test-action
                 ls
             - name: use another repository action
-              uses: lonely-takumi/reusable-workflow-repository/.github/actions/test-action@main
+              uses: ${{ github.workspace }}/sub/.github/actions/test-action
               with:
                 input_1: "fwjfiowjf"
