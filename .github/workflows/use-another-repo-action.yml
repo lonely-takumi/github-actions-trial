@@ -6,6 +6,8 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+              with: 
+                path: main
             - name: check directory
               run: |
                 ls
@@ -14,7 +16,7 @@ jobs:
               with:
                 repository: lonely-takumi/reusable-workflow-repository
                 ref: main
-                path: /home/runner/work/
+                path: sub
             - name: check directory
               run: |
                 ls
