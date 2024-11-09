@@ -22,10 +22,9 @@ jobs:
                 ls
             - name: move work directory
               run: |
-                cd /home/runner/work/
+                cd ${{ github.workspace }}/main
                 ls
-                cd sub
-                ls
-                cd /home/runner/work/main
+                cd ${{ github.workspace }}/sub
                 ls
                 cd ${{ github.workspace }}/sub/.github/actions/test-action
+                ls
