@@ -19,6 +19,6 @@ jobs:
             contents: read
         with:
             input_1: "ttttttttttttttttttttttest"
-            id: ${{needs.set-env.outputs.secret-id}}
+            id: ${{secrets.MASTER_ID}}
         secrets:
             cloud_id: ${{ secrets.CLOUD_ID }}
