@@ -14,6 +14,7 @@ jobs:
               with:
                 repository: lonely-takumi/reusable-workflow-repository
                 ref: main
+                path: /home/runner/work/
             - name: check directory
               run: |
                 ls
