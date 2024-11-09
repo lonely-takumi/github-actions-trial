@@ -24,6 +24,11 @@ jobs:
               run: |
                 cd /home/runner/work/
                 ls
+                cd sub
+                ls
+                cd /home/runner/work/main
+                ls
+                cd ${{ github.workspace }}/sub/.github/actions/test-action
             - name: another repository action
               uses: ${{ github.workspace }}/sub/.github/actions/test-action
               with:

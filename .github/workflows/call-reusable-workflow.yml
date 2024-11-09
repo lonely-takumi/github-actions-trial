@@ -19,6 +19,5 @@ jobs:
             contents: read
         with:
             input_1: "ttttttttttttttttttttttest"
-            id: ${{secrets.MASTER_ID}}
         secrets:
             cloud_id: ${{ secrets.CLOUD_ID }}
