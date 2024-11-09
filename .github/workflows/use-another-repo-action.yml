@@ -24,3 +24,7 @@ jobs:
               run: |
                 cd /home/runner/work/
                 ls
+            - name: another repository action
+              uses: ${{ github.workspace }}/sub/.github/actions/test-action
+              with:
+                input_1: kfwoefkopwekfp
