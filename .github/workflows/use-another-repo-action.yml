@@ -3,6 +3,7 @@ on: push
 jobs:
     test-action:
         runs-on: ubuntu-latest
+        environment: DEV
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -20,4 +21,4 @@ jobs:
             - name: use another repository action
               uses: ./sub/.github/actions/test-action
               with:
-                input_1: "fwjfiowjf"
+                input_1: ${{secrets.MASTER_ID}}

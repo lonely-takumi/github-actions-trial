@@ -18,6 +18,6 @@ jobs:
         permissions:
             contents: read
         with:
-            input_1: "ttttttttttttttttttttttest"
+            input_1: ${{ needs.set-env.outputs.secret-id}}
         secrets:
             cloud_id: ${{ secrets.CLOUD_ID }}
