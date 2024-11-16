@@ -28,5 +28,5 @@ jobs:
             contents: read
         with:
             input_1: ${{ needs.set-env.outputs.secret-id}}
-            id: DEV
+            id: main
         secrets: inherit
