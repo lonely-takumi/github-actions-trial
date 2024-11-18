@@ -15,9 +15,3 @@ jobs:
     call:
         needs: set-env
         uses: lonely-takumi/reusable-workflow-repository/.github/workflows/reusable-workflow.yml@v1
-        permissions:
-            contents: read
-        with:
-            input_1: ${{ needs.set-env.outputs.secret-id}}
-        secrets:
-            cloud_id: ${{ secrets.CLOUD_ID }}
