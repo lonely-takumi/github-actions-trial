@@ -17,4 +17,4 @@ jobs:
                 echo "secret-id=$secretId" >> $GITHUB_OUTPUT
     call:
         needs: set-env
-        uses: lonely-takumi/reusable-workflow-repository/.github/workflows/reusable-workflow.yml@v3
+        uses: lonely-takumi/reusable-workflow-repository/.github/workflows/reusable-workflow.yml@v4
