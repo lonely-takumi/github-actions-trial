@@ -18,4 +18,4 @@ jobs:
     
     call:
         needs: set-env
-        uses: lonely-takumi/reusable-workflow-repository/.github/workflows/reusable-workflow.yml@v9
+        uses: lonely-takumi/reusable-workflow-repository/.github/workflows/reusable-workflow.yml@v10
