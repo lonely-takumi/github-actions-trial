@@ -12,15 +12,6 @@ jobs:
               run: |
                 secretId=${{ secrets.MASTER_ID}}
                 echo "secret-id=$secretId" >> $GITHUB_OUTPUT
-    # call:
-    #     needs: set-env
-    #     uses: lonely-takumi/reusable-workflow-repository/.github/workflows/reusable-workflow.yml@main
-    #     permissions:
-    #         contents: read
-    #     with:
-    #         input_1: ${{ needs.set-env.outputs.secret-id}}
-    #     secrets:
-    #         cloud_id: ${{ secrets.CLOUD_ID }}
     call:
         needs: set-env
         uses: lonely-takumi/reusable-workflow-repository/.github/workflows/reusable-workflow.yml@v1
@@ -28,5 +19,5 @@ jobs:
             contents: read
         with:
             input_1: ${{ needs.set-env.outputs.secret-id}}
-            id: main
-        secrets: inherit
+        secrets:
+            cloud_id: ${{ secrets.CLOUD_ID }}
