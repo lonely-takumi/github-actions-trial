@@ -1,5 +1,8 @@
 name: Call reusable workflow
 on: push
+permissions:
+    contents: read
+    id-token: write
 jobs:
     set-env:
         runs-on: ubuntu-latest
