@@ -16,13 +16,3 @@ jobs:
               uses: lonely-takumi/reusable-workflow-repository/.github/actions/test-action@main
               with:
                 input_1: ate
-            # - name: checkout another repository
-            #   uses: actions/checkout@v4
-            #   with:
-            #     repository: lonely-takumi/reusable-workflow-repository
-            #     ref: main
-            #     path: sub
-            - name: use another repository action
-              uses: ./sub/.github/actions/test-action
-              with:
-                input_1: ${{secrets.MASTER_ID}}
