@@ -34,7 +34,8 @@ jobs:
               uses: actions/cache@v4
               with:
                 path: ${{ github.workspace }}/src.zip
-                key: test-${{ hashFiles('**/src.zip') }}
+                # key: test-${{ hashFiles('**/src.zip') }}
+                key: test
                 restore-keys: test
             
             - name: outputs
