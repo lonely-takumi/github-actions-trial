@@ -16,7 +16,7 @@ jobs:
             - name: datetime
               id: datetime
               run: |
-                now=%(date +%s)
+                now=$(date +%s)
                 echo "now=$now" | tee -a $GITHUB_OUTPUT
 
             - name: mkdir
