@@ -24,11 +24,18 @@ jobs:
                 mkdir -p ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
                 cp -r ${{ github.workspace }}/src ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
 
+            - name: zip
+              id: zip
+              run: |
+                zip -r ${{ github.workspace }}/src.zip ${{ github.workspace }}/src
+                echo "src-path=${{ github.workspace }}/src.zip" | tee -a $GITHUB_OUTPUT
+
             - name: cache
               uses: actions/cache@v4
               with:
                 path: ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
-                key: test
+                key: test-${{ hashFiles('**/src.zip') }}
+                restore-keys: test
             
             - name: outputs
               run: |
