@@ -22,7 +22,7 @@ jobs:
             - name: mkdir
               run: |
                 mkdir -p ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
-                copy -r ${{ github.workspace }}/src ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
+                cp -r ${{ github.workspace }}/src ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
 
             - name: cache
               uses: actions/cache@v4
