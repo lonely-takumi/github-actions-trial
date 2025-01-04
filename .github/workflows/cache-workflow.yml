@@ -33,7 +33,7 @@ jobs:
             - name: cache
               uses: actions/cache@v4
               with:
-                path: ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
+                path: ${{ github.workspace }}/src.zip
                 key: test-${{ hashFiles('**/src.zip') }}
                 restore-keys: test
             
