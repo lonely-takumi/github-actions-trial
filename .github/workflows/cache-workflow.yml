@@ -12,11 +12,22 @@ jobs:
         steps:
             - name: checkout
               uses: actions/checkout@v2
+            
+            - name: datetime
+              id: datetime
+              run: |
+                now=%(date +%s)
+                echo "now=$now" | tee -a $GITHUB_OUTPUT
+
+            - name: mkdir
+              run: |
+                mkdir -p ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
+                copy -r ${{ github.workspace }}/src ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
 
             - name: cache
-              uses: actions/cache@v2
+              uses: actions/cache@v4
               with:
-                path: ${{ github.workspace }}/src
+                path: ${{ github.workspace }}/src_${{ steps.datetime.outputs.now }}
                 key: test
             
             - name: outputs
