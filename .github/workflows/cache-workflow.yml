@@ -31,12 +31,12 @@ jobs:
                 echo "src-path=${{ github.workspace }}/src.zip" | tee -a $GITHUB_OUTPUT
 
             - name: cache
+              id: cache
               uses: actions/cache@v4
               with:
                 path: ${{ github.workspace }}/src.zip
                 # key: test-${{ hashFiles('**/src.zip') }}
                 key: test
-                restore-keys: test
             
             - name: outputs
               run: |
