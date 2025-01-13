@@ -38,6 +38,8 @@ jobs:
               if: ${{ steps.echo.outputs.output_1 == 'a' }} && ${{ inputs.arg_2 == true }}
               run: |
                 echo "if_2"
+                echo ${{ steps.echo.outputs.output_1 }}
+                echo ${{ inputs.arg_2 }}
 
             - name: if_3
               if: ${{ inputs.arg_3 == false }} && ${{ inputs.arg_4 == false }}
