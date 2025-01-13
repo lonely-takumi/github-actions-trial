@@ -1,0 +1,48 @@
+name: if conditions
+
+on:
+    workflow_dispatch:
+        inputs:
+            arg_1:
+                type: boolean
+                default: false
+            arg_2:
+                type: boolean
+                default: true
+            arg_3:
+                type: boolean
+                default: false
+            arg_4:
+                type: boolean
+                default: true
+
+jobs:
+    job_1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo
+              run: |
+                echo "arg_1=${{ inputs.arg_1 }}" | tee -a $GITHUB_OUTPUT
+                echo "arg_2=${{ inputs.arg_2 }}" | tee -a $GITHUB_OUTPUT
+                echo "arg_3=${{ inputs.arg_3 }}" | tee -a $GITHUB_OUTPUT
+                echo "arg_4=${{ inputs.arg_4 }}" | tee -a $GITHUB_OUTPUT
+            
+            - name: if_1
+              if: ${{ inputs.arg_1 == true }}
+              run: |
+                echo "if_1"
+
+            - name: if_2
+              if: ${{ inputs.arg_2 == true }}
+              run: |
+                echo "if_2"
+
+            - name: if_3
+              if: ${{ inputs.arg_3 == true }}
+              run: |
+                echo "if_3"
+
+            - name: if_4
+              if: ${{ inputs.arg_4 == true }}
+              run: |
+                echo "if_4"
