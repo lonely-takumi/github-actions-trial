@@ -21,11 +21,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: echo
+              id: echo
               run: |
                 echo "arg_1=${{ inputs.arg_1 }}" | tee -a $GITHUB_OUTPUT
                 echo "arg_2=${{ inputs.arg_2 }}" | tee -a $GITHUB_OUTPUT
                 echo "arg_3=${{ inputs.arg_3 }}" | tee -a $GITHUB_OUTPUT
                 echo "arg_4=${{ inputs.arg_4 }}" | tee -a $GITHUB_OUTPUT
+                echo "output_1=a" | tee -a $GITHUB_OUTPUT
             
             - name: if_1
               if: ${{ inputs.arg_1 == true }} && ${{ inputs.arg_2 == true }}
@@ -33,7 +35,7 @@ jobs:
                 echo "if_1"
 
             - name: if_2
-              if: ${{ inputs.arg_2 == true }}
+              if: ${{ steps.echo.outputs.output_1 == 'a' }} && ${{ inputs.arg_2 == true }}
               run: |
                 echo "if_2"
 
