@@ -50,3 +50,9 @@ jobs:
               if: ${{ inputs.arg_4 == true }}
               run: |
                 echo "if_4"
+
+    job_2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: test-action-1
+              uses: reusable-workflow-repository/.github/actions/test-action-1@main
