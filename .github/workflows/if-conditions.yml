@@ -56,3 +56,11 @@ jobs:
         steps:
             - name: test-action-1
               uses: lonely-takumi/reusable-workflow-repository/.github/actions/test-action-1@main
+
+    job_3:
+        runs-on: ubuntu-latest
+        steps:
+            - name: test-action-1
+              uses: lonely-takumi/reusable-workflow-repository/.github/actions/test-action-1@main
+              with:
+                input_1: false
