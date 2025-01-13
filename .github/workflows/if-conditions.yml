@@ -28,7 +28,7 @@ jobs:
                 echo "arg_4=${{ inputs.arg_4 }}" | tee -a $GITHUB_OUTPUT
             
             - name: if_1
-              if: ${{ inputs.arg_1 == true }}
+              if: ${{ inputs.arg_1 == true }} && ${{ inputs.arg_2 == true }}
               run: |
                 echo "if_1"
 
@@ -38,7 +38,7 @@ jobs:
                 echo "if_2"
 
             - name: if_3
-              if: ${{ inputs.arg_3 == true }}
+              if: ${{ inputs.arg_3 == false }} && ${{ inputs.arg_4 == false }}
               run: |
                 echo "if_3"
 
