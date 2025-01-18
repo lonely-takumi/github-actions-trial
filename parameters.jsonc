@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "storageAccountName": {
+        "value": "stkagetest20150118"
+      },
+      "skuName": {
+        "value": "Standard_LRS"
+      },
+      "location": {
+        "value": "eastus"   
+      },
+      "loginPassword": {
+        "value": "Password1234!"
+      }
+    }
+  }
+  /*
+    The parameters file is a JSON file that contains values for the parameters that are used in the template.
+  */

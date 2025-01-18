@@ -1,0 +1,14 @@
+name: echo
+
+on: push
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v4
+
+            - name: echo
+              run: |
+                 cat parameters.jsonc
