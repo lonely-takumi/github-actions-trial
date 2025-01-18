@@ -4,6 +4,7 @@ on: push
 
 jobs:
     echo:
+        environment: DEV
         runs-on: ubuntu-latest
         steps:
             - name: checkout
@@ -12,3 +13,8 @@ jobs:
             - name: echo
               run: |
                  cat parameters.jsonc
+
+            - name: edit
+              run: |
+                jq '.parameters.loginPassword = "${{ secrets.DEV }}"' parameters.json > parameters.json
+                cat parameters.json
