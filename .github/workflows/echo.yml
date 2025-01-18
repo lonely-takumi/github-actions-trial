@@ -12,9 +12,9 @@ jobs:
 
             - name: echo
               run: |
-                 cat parameters.json
+                cat parameters.json
 
             - name: edit
               run: |
-                jq '.parameters.loginPassword = "${{ secrets.MASTER_ID }}"' parameters.json > parameters.json
-                cat parameters.json
+                jq '.parameters.loginPassword = "${{ secrets.MASTER_ID }}"' parameters.json > new_parameters.json
+                cat new_parameters.json
