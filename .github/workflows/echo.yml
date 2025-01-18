@@ -12,7 +12,7 @@ jobs:
 
             - name: echo
               run: |
-                 cat parameters.jsonc
+                 cat parameters.json
 
             - name: edit
               run: |
