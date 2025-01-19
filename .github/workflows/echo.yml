@@ -18,3 +18,9 @@ jobs:
               run: |
                 jq '.parameters.loginPassword = "${{ secrets.MASTER_ID }}"' parameters.json > new_parameters.json
                 cat new_parameters.json
+
+            - name: convert json to jsonc
+              run: |
+                cat new_parameters.json > parameters.jsonc
+                ls
+                cat parameters.jsonc
