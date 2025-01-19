@@ -24,3 +24,18 @@ jobs:
                 cat new_parameters.json > parameters.jsonc
                 ls
                 cat parameters.jsonc
+
+            - name: add comment
+              run: |
+                comment="/*
+                This is a comment.
+                fjp;eof:waopjfo
+                fmopwe:apowejf:
+                  fkaopwje:oafkwe[]ap
+                  kfoea:jofeakpeka
+                epwak:qa@wpekpfwe
+                */"
+                # add comment to last line of parameters.jsonc
+                echo "$comment" >> parameters.jsonc
+                cat parameters.jsonc
+                
