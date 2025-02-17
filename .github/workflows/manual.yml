@@ -31,4 +31,4 @@ jobs:
               gh release create test \
                           --target ${{ github.sha }} \
                           --title test \
-                          --notes ${{ inputs.greeting }}
+                          --notes "${{ inputs.greeting }}"
