@@ -7,8 +7,26 @@ on:
                 default: Hello
                 required: true
                 description: A cheerful word
+
+permissions:
+  id-token: write
+  # releaseの作成を許可するためwriteに設定
+  contents: write
+  actions: read
+
 jobs:
     run:
         runs-on: ubuntu-latest
         steps:
             - run: echo "${{ inputs.greeting}}"
+    release-tag:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Release Tag
+            env:
+              GH_TOKEN: ${{ github.token }}
+            run: |
+              gh release create test \
+                          --target ${{ github.sha }} \
+                          --title test \
+                          --notes ${{ inputs.greeting }}
