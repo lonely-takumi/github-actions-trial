@@ -17,7 +17,9 @@ jobs:
               uses: actions/checkout@v4
             - name: Get PR number
               id: pr_number
-              run: echo "${{ github.ref }}"
+              run: |
+                echo "${{ github.ref }}"
+                echo "${{ github.head_ref}}"
             - name: Add label
               env:
                 GH_TOKEN: ${{ github.token }}
