@@ -2,7 +2,7 @@ name: Add label on pull request
 
 on:
     pull_request:
-        types: opened
+        types: [opened, reopened]
 
 permissions:
     id-token: write
@@ -13,6 +13,8 @@ jobs:
     add-label:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout
+              uses: actions/checkout@v4
             - name: Get PR number
               id: pr_number
               run: echo "${{ github.ref }}"
