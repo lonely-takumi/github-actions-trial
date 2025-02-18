@@ -20,7 +20,8 @@ jobs:
               env:
                 GH_TOKEN: ${{ github.token }}
               run: |
-                gh pr edit ${{ github.ref }} --add-label "needs-review"
+                number=$(echo "${{ github.ref }}" | awk -F'/' '{print $3}')
+                gh pr edit "$number" --add-label "needs-review"
                 echo "${{ github.event }}"
                 
             
