@@ -17,6 +17,7 @@ jobs:
                 cd ..
                 pwd
                 ls
+                cd _actions
                 # cat parameters.json
 
             - name: edit
