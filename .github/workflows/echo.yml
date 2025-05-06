@@ -12,10 +12,10 @@ jobs:
 
             - name: echo
               run: |
-                pwd
                 cd ..
                 cd ..
-                cd _actions/actions/checkout
+                cd _actions/actions/checkout/11bd71901bbe5b1630ceea73d27597364c9af683
+                git tag --contains 11bd71901bbe5b1630ceea73d27597364c9af683
                 ls
                 # cat parameters.json
 
