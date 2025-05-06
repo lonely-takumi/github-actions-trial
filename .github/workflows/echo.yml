@@ -15,9 +15,8 @@ jobs:
                 pwd
                 cd ..
                 cd ..
-                pwd
+                cd _actions/actions/checkout
                 ls
-                cd _actions
                 # cat parameters.json
 
             - name: edit
