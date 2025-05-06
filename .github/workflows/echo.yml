@@ -12,6 +12,8 @@ jobs:
 
             - name: echo
               run: |
+                pwd
+                ls
                 cat parameters.json
 
             - name: edit
