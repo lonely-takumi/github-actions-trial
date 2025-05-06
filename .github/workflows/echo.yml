@@ -12,9 +12,11 @@ jobs:
 
             - name: echo
               run: |
-                cd .
+                pwd
+                cd ..
+                pwd
                 ls
-                cat parameters.json
+                # cat parameters.json
 
             - name: edit
               run: |
