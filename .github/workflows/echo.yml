@@ -12,7 +12,7 @@ jobs:
 
             - name: echo
               run: |
-                pwd
+                cd .
                 ls
                 cat parameters.json
 
