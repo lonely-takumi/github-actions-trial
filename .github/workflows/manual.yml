@@ -7,6 +7,9 @@ on:
                 default: Hello
                 required: true
                 description: A cheerful word
+            json-string:
+                type: string
+                default: '{"testA":"ABC","testB":"XYZ"}'
 
 permissions:
   id-token: write
@@ -20,6 +23,8 @@ jobs:
         steps:
             - run: echo "${{ inputs.greeting}}"
     release-tag:
+        env:
+            JSON_STRING: ${{ fromJSON(github.event.inputs.json-string)['testA'] }}
         runs-on: ubuntu-latest
         steps:
           - name: Checkout
@@ -28,7 +33,8 @@ jobs:
             env:
               GH_TOKEN: ${{ github.token }}
             run: |
-              gh release create test \
-                          --target ${{ github.sha }} \
-                          --title test \
-                          --notes "${{ inputs.greeting }}"
+              echo ${{ env.JSON_STRING }}
+              # gh release create test \
+              #             --target ${{ github.sha }} \
+              #             --title test \
+              #             --notes "${{ inputs.greeting }}"
